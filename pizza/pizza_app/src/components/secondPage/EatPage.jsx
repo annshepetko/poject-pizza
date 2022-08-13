@@ -1,36 +1,36 @@
-import React, {useState} from 'react'
-import PizzaItem from "./Pizza";
-import {pizzas} from "../../assets/data";
+import React, {useState, useContext} from 'react'
 
+import Popup from "../popup/Popup";
+import {MyContext} from "../../App";
+import PizzaItem from "./Pizza";
 
 
 const EatPage = () => {
+    const [pizzas, setPizzas] = useContext(MyContext);
+
     const [popup, setPopup] = useState(false)
-
-
-
+    const closePopup = () => {
+        setPopup(false)
+    }
+    const openPopup = () => {
+        setPopup(true)
+    }
     return (
         <div>
             <div className='pizza__shell'>
                 {pizzas.map((item, key) => (
-                    <PizzaItem key={item.id} {...item} />
-                ))}
-                    <button onClick={() => {setPopup(true)}} className='pizza__shell_buttonOrder'>Замовити </button>
+                        <PizzaItem key={key} {...item}/>
+                    )
+                )
+                }
+                <button onClick={openPopup} className='pizza__shell_buttonOrder'>Замовити
+                </button>
                 {
                     popup ?
-                     <div className= 'popup'>
-                        <div className= 'popup__body'>
-                            <div className= 'popup__content'>
-
-                                <div className='popup__title'>Підтвердіть замовлення </div>
-                               
-                                <button onClick={() => {setPopup(false); console.log(pizzas) }} className='popup__closer'>закрити</button>
-                            </div>
-                        </div>
-                     </div>
+                        <Popup onClick={closePopup}/>
                         :
-                     ''
-                    }
+                        ''
+                }
             </div>
         </div>
     )
