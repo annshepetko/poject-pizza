@@ -1,0 +1,30 @@
+.pizza__order{
+
+    margin-bottom: 100px;
+    text-align: center;
+
+}
+
+.pizza__order img {
+
+    transition: 0.5s;
+    border-radius: 20px;
+    width: 340px;
+    height: 300px;
+    filter: grayscale(70%);
+}
+.pizza__order img:hover{
+    border-radius: 20px;
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+.pizza__button_shell{
+    margin-top: 40px;
+}
+.pizza__order_text{
+    margin-top: 25px;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
