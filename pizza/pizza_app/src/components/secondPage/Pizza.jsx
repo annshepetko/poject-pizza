@@ -2,7 +2,7 @@ import {useContext} from "react";
 import {MyContext} from "../../App";
 
 
-const PizzaItem = ({title, image, description, price, id, quantity}) => {
+const   PizzaItem = ({title, image, description, price, id, quantity}) => {
     const [stateFromContext, setStateFromContext] = useContext(MyContext);
     // MyContext should be imported
 

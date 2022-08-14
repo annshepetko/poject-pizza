@@ -7,6 +7,17 @@
     margin: 0 auto;
     height: 100%;
 }
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-thumb{
+    background: #282727;
+    border-radius: 15px;
+    height: 100px;
+
+}
+
+
 .image{
     width: 100% ;
     height: 1080px;
@@ -193,6 +204,7 @@ h2{
 
 
 .pizza__btn-s{
+    margin-left: 50px;
     margin-right: 100px;
     margin-top: 50px;
     align-items: center;
@@ -226,12 +238,3 @@ h2{
     height: 150px;
 }
 
-.popup__title{
-    font-size: 25px;
-    font-weight: 600;
-    text-align: center;
-
-}
-.popup__closer{
-
-}
