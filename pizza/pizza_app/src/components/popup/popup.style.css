@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%;
     position: fixed;
+    z-index: 5;
     background: rgba(0, 0, 0, 0.71);
     top: 0;
     left: 0;
@@ -44,9 +45,12 @@
     text-align: center;
     font-weight: 600;
     border-radius: 7px;
-    font-size: 20px;
+    font-size: 18px;
 }
 .popup__form{
+
+}
+.popup__form_button{
     padding: 15px 15px;
     background-color: rgba(74, 232, 112, 0.73);
     color: #1f211f;
@@ -55,9 +59,5 @@
     text-align: center;
     font-weight: 600;
     border-radius: 7px;
-    font-size: 20px;
-}
-.popup__form_button{
-    background-color: rgba(28,28,28,0);
-    font-size: 20px;
+    font-size: 18px;
 }

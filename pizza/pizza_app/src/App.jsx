@@ -5,22 +5,28 @@ import MainPage from "./components/MainPage";
 import EatPage from "./components/secondPage/EatPage";
 import {initialState} from "./context/initialState";
 import {Form} from "./form/Form";
+import {BurgerPage} from "./components/thirdPage/BurgerPage";
 
 export const MyContext = React.createContext(null);
+export const BurgerContext = React.createContext(null)
 
 const App = () => {
-    const [contextState, setContextState] = useState(initialState);
+    const [contextState, setContextState] = useState(initialState.pizza);
+    let [contextStateBurger, setContextStateBurger] = useState(initialState.burgers)
 
     return (
         <MyContext.Provider value={[contextState, setContextState]}>
             <BrowserRouter>
+                <BurgerContext.Provider value={[contextStateBurger, setContextStateBurger]}>
                 <div className="App">
                     <Routes>
                         <Route path="/" element={<MainPage/>}/>
-                        <Route path="/eat" element={<EatPage/>}/>
+                        <Route path="/pizza" element={<EatPage/>}/>
                         <Route path = '/form' element={<Form/>}/>
+                        <Route path = "/burgers" element={<BurgerPage/>}/>
                     </Routes>
                 </div>
+                </BurgerContext.Provider>
             </BrowserRouter>
         </MyContext.Provider>
 

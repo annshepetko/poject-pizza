@@ -1,8 +1,8 @@
 import {useContext} from "react";
-import {MyContext} from "../../App";
+import {MyContext} from "../../../App";
 import classes from './Pizza.module.css'
 
-const  PizzaItem = ({title, image, description, price, id, quantity, none}) => {
+const  EatItem = ({title, image, description, price, id, quantity, none}) => {
     const [stateFromContext, setStateFromContext] = useContext(MyContext);
     // MyContext should be imported
 
@@ -45,4 +45,4 @@ const  PizzaItem = ({title, image, description, price, id, quantity, none}) => {
     )
 }
 
-export default PizzaItem;
+export default EatItem;

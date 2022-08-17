@@ -39,3 +39,9 @@ h1{
     line-height: 150%;
     letter-spacing: 0.1rem;
 }
+.menu__container{
+    display: flex;
+    max-width: 1110px;
+    justify-content: space-around;
+    margin: 0 auto;
+}

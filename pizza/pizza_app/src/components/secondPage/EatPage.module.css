@@ -12,3 +12,9 @@
     font-weight: 600;
     background: rgba(74, 232, 112, 0.73);
 }
+hr{
+    height: 1px;
+    background: rgb(126, 117, 117);
+    width: 1540px;
+    margin: 40px auto;
+}

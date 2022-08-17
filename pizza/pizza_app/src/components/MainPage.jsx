@@ -15,8 +15,10 @@ export default function MainPage() {
         <Header/>
         <Cards_Container/>
         <Basic/>
+        <div className='menu__container'>
         <Animation_item {...animation_data.pizza}/>
-
+            <Animation_item {...animation_data.burger}/>
+        </div>
     </div>
     </div>
   )
