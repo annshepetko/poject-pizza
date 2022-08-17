@@ -6,9 +6,6 @@ import Popup from "../components/popup/Popup";
 
 export const Form = () => {
     const [popup, setPopup] = useState(false)
-    let closePopup = () => {
-        setPopup(false)
-    }
     let [formArray, setFormArray] = useContext(MyContext)
     let [userName, setUserName] = useState('')
     let [userSurname, setUserSurname] = useState('')
@@ -27,7 +24,9 @@ export const Form = () => {
     let userPhoneNumberInput = (e) => {
         setUserPhoneNumber(e.target.value)
     }
-
+    let closePopup = () => {
+        setPopup(false)
+    }
     let sendData = (e) => {
         e.preventDefault()
         if (userSurname.length > 3 && userAddress.length > 35 && userName.length > 5 && userPhoneNumber.length > 9) {
@@ -38,6 +37,9 @@ export const Form = () => {
             setPopup(true)
         }
     }
+    let num = formArray.map(item => item.quantity > 0 ? item.quantity * item.price : 0)
+    let totalPrice = num.reduce((acc, item) => acc + item)
+
         return (
             <form className={classes.form__eat} onSubmit={sendData}>
                 <p className={classes.form__title}>Заповніть форму</p>
@@ -54,7 +56,7 @@ export const Form = () => {
                     </div>
                     <div>
                         <input value={userAddress} onChange={userAddressInput} type='text'
-                               placeholder='Місто, вулиця, будинок, номер під`  їзду, квартира '/>
+                               placeholder='Місто, вулиця, будинок, номер під`їзду, квартира '/>
                         {userAddress.length > 35 ?
                             <span className={classes.form__special_character}>&#10004;</span> : ''}
                     </div>
@@ -64,7 +66,9 @@ export const Form = () => {
                         {userPhoneNumber.length > 9 ?
                             <span className={classes.form__special_character}>&#10004;</span> : ''}
                     </div>
-                    {}
+                        <div className={classes.form__total_price}>
+                           Сумма замовлення: {totalPrice } грн
+                        </div>
                     <button className={classes.form__button_order} type='submit'>Готово</button>
                     <NavLink className={classes.form__button_back} to='/eat'>Назад</NavLink>
                     {
