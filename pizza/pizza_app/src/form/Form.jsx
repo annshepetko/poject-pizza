@@ -6,9 +6,12 @@ import Popup from "../components/popup/Popup";
 
 export const Form = () => {
     const [popup, setPopup] = useState(false)
+<<<<<<< HEAD
     let closePopup = () => {
         setPopup(false)
     }
+=======
+>>>>>>> origin/popupItem
     let [formArray, setFormArray] = useContext(MyContext)
     let [userName, setUserName] = useState('')
     let [userSurname, setUserSurname] = useState('')
@@ -27,7 +30,16 @@ export const Form = () => {
     let userPhoneNumberInput = (e) => {
         setUserPhoneNumber(e.target.value)
     }
+<<<<<<< HEAD
 
+=======
+    let closePopup = () => {
+        setPopup(false)
+    }
+    let num = formArray.map(item => item.quantity > 0 ? item.quantity * item.price : 0)
+    let totalPrice = num.reduce((acc, item) => acc + item)
+    let [priceNumber, setPriceNumber] = useState(totalPrice)
+>>>>>>> origin/popupItem
     let sendData = (e) => {
         e.preventDefault()
         if (userSurname.length > 3 && userAddress.length > 35 && userName.length > 5 && userPhoneNumber.length > 9) {
@@ -35,6 +47,10 @@ export const Form = () => {
             setUserAddress('')
             setUserName('')
             setUserPhoneNumber('')
+<<<<<<< HEAD
+=======
+            setPriceNumber(0)
+>>>>>>> origin/popupItem
             setPopup(true)
         }
     }
@@ -54,7 +70,11 @@ export const Form = () => {
                     </div>
                     <div>
                         <input value={userAddress} onChange={userAddressInput} type='text'
+<<<<<<< HEAD
                                placeholder='Місто, вулиця, будинок, номер під`  їзду, квартира '/>
+=======
+                               placeholder='Місто, вулиця, будинок, номер під`їзду, квартира '/>
+>>>>>>> origin/popupItem
                         {userAddress.length > 35 ?
                             <span className={classes.form__special_character}>&#10004;</span> : ''}
                     </div>
@@ -64,7 +84,14 @@ export const Form = () => {
                         {userPhoneNumber.length > 9 ?
                             <span className={classes.form__special_character}>&#10004;</span> : ''}
                     </div>
+<<<<<<< HEAD
                     {}
+=======
+                        <div className={classes.form__total_price}>
+
+                           Сумма замовлення: {priceNumber} грн
+                        </div>
+>>>>>>> origin/popupItem
                     <button className={classes.form__button_order} type='submit'>Готово</button>
                     <NavLink className={classes.form__button_back} to='/eat'>Назад</NavLink>
                     {

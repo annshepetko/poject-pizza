@@ -1,0 +1,76 @@
+.pizza__content button{
+    font-size: 20px;
+    padding: 5px 20px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+.pizza__content{
+
+    border-radius: 20px;
+    border: 2px solid rgba(238, 202, 47, 0.78);
+    border-left: none;
+    min-height: 305px;
+    margin-top: 25px;
+}
+.pizza__img{
+    width: 100%;
+    flex-direction: row;;
+    box-sizing: border-box;
+    display: flex;
+
+
+}
+.pizza__img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.pizza__body{
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.pizza__name{
+    margin-top: 20px;
+    font-size: 36px;
+    font-weight: 600 ;
+}
+.pizza__title{
+    flex-basis: 50%;
+    margin-left: 50px;
+}
+.pizza__description{
+    margin-top: 20px;
+    line-height: 30px;
+    font-size: 20px;
+}
+.pizza__description:first-letter{
+    font-size: 25px;
+}
+
+
+.pizza__btn_s{
+    margin-left: 50px;
+    margin-right: 100px;
+    margin-top: 50px;
+    align-items: center;
+    display: flex;
+}
+.pizza__count{
+    font-size: 20px;
+    margin-right: 50px;
+}
+.pizza__price{
+    font-size: 20px;
+}
+.increment{
+    margin-right: 15px;
+    background: #45dc6b;
+}
+.decrement {
+    background: #e03e3e;
+    margin-right: 20px;
+}

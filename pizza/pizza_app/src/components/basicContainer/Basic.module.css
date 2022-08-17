@@ -1,0 +1,37 @@
+
+h2{
+    font-size: 30px;
+    text-transform:capitalize;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.basic{
+    border-radius: 10px;
+    max-width: 1110px;
+    padding-top: 105px ;
+    padding-bottom: 90px;
+    margin: 0 auto;
+    background-color: rgba(37, 37, 37, 1);
+    margin-bottom: 100px;
+
+}
+.basic__container{
+    width: 731px;
+    margin: 0 auto;
+
+}
+.basic__content{
+    text-align: center;
+    left: 30px;
+    color: rgba(166, 166, 166, 1);
+    margin-bottom: 90px;
+}
+.pizza__container{
+    display: flex;
+    column-gap: 35px;
+}
+.pizza__container img {
+    width: 350px;
+    height: 270px;
+    border-radius: 5px;
+}

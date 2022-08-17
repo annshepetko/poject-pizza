@@ -1,5 +1,5 @@
 .form__eat{
-    position: fixed;
+
     left: 500px;
     width: 900px;
     height: 600px;
@@ -35,6 +35,10 @@
     color: #45dc6b;
     display: inline-block;
     margin-left: 20px;
+}
+.form__total_price{
+    margin-top: 50px;
+    font-size: 17px;
 }
 .form__button_order{
     margin-top: 40px;
