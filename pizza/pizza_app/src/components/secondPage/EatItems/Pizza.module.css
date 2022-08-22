@@ -9,9 +9,10 @@
     border-radius: 20px;
     border: 2px solid rgba(238, 202, 47, 0.78);
     border-left: none;
-    min-height: 305px;
+    height: 305px;
     margin-top: 25px;
 }
+
 .pizza__img{
     width: 100%;
     flex-direction: row;;

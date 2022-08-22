@@ -16,9 +16,9 @@ const  BurgerItem = ({title, image, description, price, id, quantity, none}) => 
         )
     }
 
-
+    let eatClass = [classes.pizza__content,]
     return (
-        <div style={{border: '2px solid rgba(201, 58, 53, 0.78)', borderLeft: 'none'}} className={classes.pizza__content}>
+        <div style={{border: '2px solid rgba(201, 58, 53, 0.78)', borderLeft: 'none'}} className={eatClass.join(' ')}>
             <div className={classes.pizza__img}>
                 <img src={image} alt=""/>
                 <div className={classes.pizza__body}>

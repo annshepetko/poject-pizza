@@ -1,5 +1,5 @@
 .form__eat{
-
+    overflow: auto;
     left: 500px;
     width: 900px;
     height: 600px;

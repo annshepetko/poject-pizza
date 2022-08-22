@@ -3,6 +3,7 @@ import classes from './form.module.css'
 import {MyContext, BurgerContext} from "../App";
 import {NavLink} from "react-router-dom";
 import Popup from "../components/popup/Popup";
+import EatItem from "../components/secondPage/EatItems/EatItem";
 
 export const Form = () => {
     const [popup, setPopup] = useState(false)
@@ -14,6 +15,8 @@ export const Form = () => {
 
     let [formArray, setFormArray] = useContext(MyContext)
     let [burgerCardOrder, setBurgerOrderCard] = useContext(BurgerContext)
+
+
     let orderData = [...formArray, ...burgerCardOrder]
 
 
@@ -51,6 +54,7 @@ export const Form = () => {
             <form className={classes.form__eat} onSubmit={sendData}>
                 <p className={classes.form__title}>Заповніть форму</p>
                 <div className={classes.form__eat_input}>
+                    {orderData.map(item => item.quantity > 0 ? <EatItem {...item} description={''}  fontSize={'25px'} height={'100px'} width={'100px'}  none={'none'}  /> : '' )}
                     <div>
                         <input value={userName} onChange={userNameInput} type='text' placeholder='Введіть своє ім`я'/>
                         {userName.length > 5 ? <span className={classes.form__special_character}>&#10004;</span> : ''}

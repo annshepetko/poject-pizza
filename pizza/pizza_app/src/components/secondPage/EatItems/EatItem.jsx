@@ -2,7 +2,7 @@ import {useContext} from "react";
 import {MyContext} from "../../../App";
 import classes from './Pizza.module.css'
 
-const  EatItem = ({title, image, description, price, id, quantity, none}) => {
+const  EatItem = ({title, image, description, price, id, quantity, none, height, width, fontSize}) => {
     const [stateFromContext, setStateFromContext] = useContext(MyContext);
     // MyContext should be imported
 
@@ -21,12 +21,12 @@ const  EatItem = ({title, image, description, price, id, quantity, none}) => {
         );
     };
     return (
-        <div className={classes.pizza__content}>
+        <div  style={{height: height}}  className={classes.pizza__content}>
             <div className={classes.pizza__img}>
-                <img src={image} alt=""/>
+                <img style={{height: height, width: width }}  src={image} alt=""/>
                 <div className={classes.pizza__body}>
                     <div className={classes.pizza__title}>
-                        <div className={classes.pizza__name}>{title}</div>
+                        <div  style={{fontSize: fontSize}} className={classes.pizza__name}>{title}</div>
                         <div className={classes.pizza__description}>{description} </div>
                     </div>
                     <div className={classes.pizza__btn_s}>
