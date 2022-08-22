@@ -13,8 +13,8 @@ export const Form = () => {
     let [userPhoneNumber, setUserPhoneNumber] = useState('')
 
 
-    let [formArray, setFormArray] = useContext(MyContext)
-    let [burgerCardOrder, setBurgerOrderCard] = useContext(BurgerContext)
+    let [formArray] = useContext(MyContext)
+    let [burgerCardOrder] = useContext(BurgerContext)
 
 
     let orderData = [...formArray, ...burgerCardOrder]
@@ -54,7 +54,7 @@ export const Form = () => {
             <form className={classes.form__eat} onSubmit={sendData}>
                 <p className={classes.form__title}>Заповніть форму</p>
                 <div className={classes.form__eat_input}>
-                    {orderData.map(item => item.quantity > 0 ? <EatItem {...item} description={''}  fontSize={'25px'} height={'100px'} width={'100px'}  none={'none'}  /> : '' )}
+                    {orderData.map((item, index) => item.quantity > 0 ? <EatItem key = {index} {...item} description={''}  fontSize={'25px'} height={'100px'} width={'100px'}  none={'none'}  /> : '' )}
                     <div>
                         <input value={userName} onChange={userNameInput} type='text' placeholder='Введіть своє ім`я'/>
                         {userName.length > 5 ? <span className={classes.form__special_character}>&#10004;</span> : ''}
