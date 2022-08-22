@@ -1,6 +1,7 @@
 import {useContext} from "react";
 import {MyContext} from "../../../App";
 import classes from './Pizza.module.css'
+import {useSpring, animated} from "react-spring";
 
 const  EatItem = ({title, image, description, price, id, quantity, none, height, width, fontSize}) => {
     const [stateFromContext, setStateFromContext] = useContext(MyContext);
@@ -20,8 +21,10 @@ const  EatItem = ({title, image, description, price, id, quantity, none, height,
             )
         );
     };
+    const animationStyles = useSpring({ to: { opacity: 1, }, from: { opacity: 0,  }, config: {duration: 500 }})
+
     return (
-        <div  style={{height: height}}  className={classes.pizza__content}>
+        <animated.div  style={{height: height, ...animationStyles }}  className={classes.pizza__content}>
             <div className={classes.pizza__img}>
                 <img style={{height: height, width: width }}  src={image} alt=""/>
                 <div className={classes.pizza__body}>
@@ -41,7 +44,7 @@ const  EatItem = ({title, image, description, price, id, quantity, none, height,
                     </div>
                 </div>
             </div>
-        </div>
+        </animated.div>
     )
 }
 

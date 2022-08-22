@@ -7,7 +7,7 @@ export let   Animation_item = ({image, title, path}) => {
 
 
                 <div className={classes.pizza__button_shell} >
-                    <NavLink  to={path}>
+                    <NavLink to={path}>
                         <img src={image} />
                         <p className={classes.pizza__order_text}>{title}</p>
                     </NavLink>

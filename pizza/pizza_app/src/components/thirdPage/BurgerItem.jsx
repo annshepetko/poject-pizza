@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import classes from '../secondPage/EatItems/Pizza.module.css'
 import {BurgerContext} from "../../App";
+import {useSpring, animated} from "react-spring";
 
 const  BurgerItem = ({title, image, description, price, id, quantity, none}) => {
     let [burgerDataFromContext, setBurgerDataFromContext] = useContext(BurgerContext)
@@ -15,10 +16,9 @@ const  BurgerItem = ({title, image, description, price, id, quantity, none}) => 
             burgerDataFromContext.map(item => item.id === burgerId ? {...item, quantity: item.quantity + diff} : item)
         )
     }
-
-    let eatClass = [classes.pizza__content,]
-    return (
-        <div style={{border: '2px solid rgba(201, 58, 53, 0.78)', borderLeft: 'none'}} className={eatClass.join(' ')}>
+    const animationStyles = useSpring({ to: { opacity: 1,  }, from: { opacity: 0, }, config: {duration: 500 }})
+    return(
+        <animated.div style= {animationStyles} className={classes.pizza__content}>
             <div className={classes.pizza__img}>
                 <img src={image} alt=""/>
                 <div className={classes.pizza__body}>
@@ -29,16 +29,22 @@ const  BurgerItem = ({title, image, description, price, id, quantity, none}) => 
                     <div className={classes.pizza__btn_s}>
                         <div className={classes.pizza__count}>{quantity}</div>
                         <div>
-                            <button style={{display: none}} onClick={() => {addBurgerCount(id)}} className={classes.increment}>+</button>
+                            <button style={{display: none}} onClick={() => {
+                                addBurgerCount(id)
+                            }} className={classes.increment}>+
+                            </button>
                         </div>
                         <div>
-                            <button style={{display: none}} onClick={() => {removeBurgerCount(id)}}  className={classes.decrement}>-</button>
+                            <button style={{display: none}} onClick={() => {
+                                removeBurgerCount(id)
+                            }} className={classes.decrement}>-
+                            </button>
                         </div>
                         <div className={classes.pizza__price}>{price}грн</div>
                     </div>
                 </div>
             </div>
-        </div>
+        </animated.div>
     )
 }
 
