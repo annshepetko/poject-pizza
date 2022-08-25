@@ -1,0 +1,8 @@
+.pizza__shell_buttonOrder{
+    border-radius: 15px;
+    margin-top: 20px;
+    padding: 20px 50px;
+    font-size: 20px;
+    font-weight: 600;
+    background: rgba(74, 232, 112, 0.73);
+}

@@ -48,7 +48,7 @@ export const initialState = {
         ],
     burgers: [
         {
-            id: 1,
+            id: 6,
             title: 'Chicken Баффало Burger',
             price: 146,
             description : ['булка, куряче філе паніроване в кукурудзяних пластівцях, цибулеві кільця, моцарела, помідори, айсберг, американська гірчиця, соуси: баффало, блю чіз та гриль, та картопля фрі'],
@@ -56,7 +56,7 @@ export const initialState = {
             quantity: 0
         },
         {
-            id: 2,
+            id: 7,
             title: 'Double burger grill',
             price: 150,
             description : ['котлета з натуральної яловичини 2 шт., салат айсберг, томат, огірок, сир Моцарела, соуси'],
@@ -64,7 +64,7 @@ export const initialState = {
             quantity: 0
         },
         {
-            id: 3,
+            id: 8,
             title: 'Royal Burger з телятиною',
             price: 170,
             description : ['Неформальний варіант бургера: соковита котлета з телятини та свіжий лист айсбергу поєднуються зі слайсом солодкої груші.\n' +
@@ -73,7 +73,7 @@ export const initialState = {
             quantity: 0
         },
         {
-            id: 4,
+            id: 9,
             title: 'Black Баффало з телятиною',
             price: 182,
             description : ['чорна булка, сир чеддер, бекон, рукола, помідори, синя цибуля, соус, котлета з телятини *всі бургери подаються з картоплею фрі'],
@@ -81,7 +81,7 @@ export const initialState = {
             quantity: 0
         },
         {
-            id: 5,
+            id: 10,
             title: 'Burger Tuna',
             price: 255,
             description : ['Тунець панко, рукола, синя цибуля, соуси: манго-карі, васабі та гриль'],

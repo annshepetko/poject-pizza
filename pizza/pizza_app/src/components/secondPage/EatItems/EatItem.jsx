@@ -17,7 +17,7 @@ const  EatItem = ({title, image, description, price, id, quantity, none, height,
     const buttonHandler = (id, diff) => {
         setStateFromContext(
             stateFromContext.map((item) =>
-                item.id === id ? {...item, quantity: item.quantity + diff} : item
+                item.id === id  ? {...item, quantity: item.quantity + diff} : item
             )
         );
     };

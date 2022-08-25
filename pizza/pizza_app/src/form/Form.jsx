@@ -54,9 +54,7 @@ export const Form = () => {
             <form className={classes.form__eat} onSubmit={sendData}>
                 <p className={classes.form__title}>Заповніть форму</p>
                 <div className={classes.form__eat_input}>
-                    <div className="order__items">
-                        {orderData.map((item, index) => item.quantity > 0 ? <EatItem key = {index} {...item} description={''}  fontSize={'25px'} height={'100px'} width={'100px'}  none={'none'}  /> : '' )}
-                    </div>
+                    {orderData.map((item, index) => item.quantity > 0 ? <EatItem key = {index} {...item} description={''}  fontSize={'25px'} height={'100px'} width={'100px'}  none={'none'}  /> : '' )}
                     <div>
                         <input value={userName} onChange={userNameInput} type='text' placeholder='Введіть своє ім`я'/>
                         {userName.length > 5 ? <span className={classes.form__special_character}>&#10004;</span> : ''}
@@ -88,7 +86,7 @@ export const Form = () => {
                     <button onClick={() =>{window.location.reload()}}><NavLink className={classes.form__button_back} to='/'  >Назад</NavLink></button>
                     {
                         popup
-                            ? <Popup none = {'none'} lineHeight='55px' margin='160px' none={'none'}
+                            ? <Popup lineHeight='55px' margin='160px' none={'none'}
                                      PopupText={'Ваше замовлення прийняте, очікуйте на кур`єра 30-45хв'}
                                      onClick={closePopup}/>
                             : ''
