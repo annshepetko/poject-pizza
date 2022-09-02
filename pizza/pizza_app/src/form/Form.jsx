@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import classes from './form.module.css'
 import {MyContext, BurgerContext} from "../App";
 import {NavLink} from "react-router-dom";
@@ -19,7 +19,10 @@ export const Form = () => {
 
     let orderData = [...formArray, ...burgerCardOrder]
 
+    useEffect(() => {
 
+        window.scrollTo(0, 0)
+    }, [])
     let userNameInput = (e) => {
         setUserName(e.target.value)
     }
