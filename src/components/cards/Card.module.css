@@ -1,0 +1,26 @@
+.card__shell{
+    display: flex;
+    flex-direction: column;
+    width: 33.333%;
+}
+.card__body{
+
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+
+.card__body_img{
+    position: relative;
+    align-self: center;
+}
+.card__body_title{
+    align-self: center;
+}
+
+.card__body_content{
+    align-self: center;
+    opacity: 0.5
+}

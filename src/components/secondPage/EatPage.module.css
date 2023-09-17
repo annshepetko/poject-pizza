@@ -1,0 +1,12 @@
+.pizza__shell {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+
+hr{
+    height: 1px;
+    background: rgb(126, 117, 117);
+    width: 1540px;
+    margin: 40px auto;
+}
