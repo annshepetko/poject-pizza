@@ -21,13 +21,14 @@ const App = () => {
         try {
             const response = await axios.get(baseUrl + "/pizza");
             const newContext = response.data.map(pizza => ({
-                ...pizza,
+                ...pizza
                 image: baseUrl + "/get-image?imageName=" + pizza.id
             }));
             setContextState(newContext);
         } catch (error) {
-            console.error("Error loading pizza:", error);
-        }
+
+            console.log(contextState)
+
     }
 
     const animationStyles = useSpring({ to: { opacity: 1 }, from: { opacity: 0 }, config: {duration: 500}})
