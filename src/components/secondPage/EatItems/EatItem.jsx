@@ -26,7 +26,7 @@ const  EatItem = ({title, image, description, price, id, quantity, none, height,
     return (
         <animated.div  style={{height: height, ...animationStyles }}  className={classes.pizza__content}>
             <div className={classes.pizza__img}>
-                <img style={{height: height, width: width }}  src={"http://localhost:8080/get-image?imageName="+ id} alt=""/>
+                <img style={{height: height, width: width }}  src={image} alt=""/>
                 <div className={classes.pizza__body}>
                     <div className={classes.pizza__title}>
                         <div  style={{fontSize: fontSize}} className={classes.pizza__name}>{title}</div>

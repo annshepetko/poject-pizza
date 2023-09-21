@@ -6,6 +6,7 @@ import EatPage from "./components/secondPage/EatPage";
 import {Form} from "./form/Form";
 import {useSpring,animated } from "react-spring";
 import axios from "axios";
+import {baseUrl} from "./constants";
 
 export const MyContext = React.createContext(null);
 
@@ -16,11 +17,17 @@ const App = () => {
     useEffect(() => {
         loadPizza()
     }, []);
-
-    const loadPizza = async () =>{
-        const response = await axios.get("http://localhost:8080/pizza");
-        setContextState(response.data)
-        console.log(contextState)
+    const loadPizza = async () => {
+        try {
+            const response = await axios.get(baseUrl + "/pizza");
+            const newContext = response.data.map(pizza => ({
+                ...pizza,
+                image: baseUrl + "/get-image?imageName=" + pizza.id
+            }));
+            setContextState(newContext);
+        } catch (error) {
+            console.error("Error loading pizza:", error);
+        }
     }
 
     const animationStyles = useSpring({ to: { opacity: 1 }, from: { opacity: 0 }, config: {duration: 500}})
