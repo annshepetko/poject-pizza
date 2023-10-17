@@ -7,7 +7,7 @@ import {Form} from "./form/Form";
 import {useSpring,animated } from "react-spring";
 import axios from "axios";
 import {baseUrl} from "./constants";
-import RegisterForm from "./components/authForms/authForm/RegisterForm";
+import AuthForm from "./components/authForms/authForm/AuthForm";
 import AuthPage from "./components/authForms/AuthPage";
 
 export const MyContext = React.createContext(null);

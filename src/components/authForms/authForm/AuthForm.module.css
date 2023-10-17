@@ -1,0 +1,52 @@
+.page_wraper {
+    position: relative;
+    height: 100vh; /* Займає 100% висоти вікна */
+}
+input {
+    width: 100%;
+    padding: 2vh 2vw; /* Займає 2% висоти та 2% ширини вікна */
+    margin-bottom: 2vh;
+    border: 1px solid #ccc;
+    border-radius: 2vw;
+    font-size: 2vh;
+}
+.form_wraper {
+    background-color: rgba(41, 41, 41, 0.72);
+    padding: 5vw; /* Займає 5% ширини вікна */
+    margin: auto;
+    z-index: 4;
+ 
+    border: 3px solid #f6ab0e;
+    border-radius: 5vw; /* Закруглені кути відсотками */
+    max-width: 30%; /* Займає максимум 30% ширини вікна */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input::placeholder {
+    color: #dae1db;
+}
+
+.form div:not(:last-child) {
+    margin-bottom: 2vh; /* Займає 2% висоти вікна */
+}
+
+.register_btn {
+    display: inline-block;
+    background: none;
+    border-radius: 2vw; /* Закруглені кути відсотками */
+    padding: 2vh 5vw; /* Займає 2% висоти та 5% ширини вікна */
+    transition-duration: 0.25s;
+    border: 2px solid #f6ab0e;
+    font-size: 2vh; /* Займає 2% висоти вікна */
+    cursor: pointer;
+    text-decoration: none;
+    margin: auto;
+    color: #f6ab0e;
+}
+
+.register_btn:hover {
+    border: 2px solid rgba(148, 145, 145, 0);
+}

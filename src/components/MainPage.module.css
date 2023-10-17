@@ -12,10 +12,10 @@
     border-radius: 10px;
     padding: 15px;
     transition-duration: 0.25s;
-    border: 2px solid #d3caca;
+    border: 2px solid #f6d758;
 }
 .auth_btn:hover{
 
-    border: 2px solid rgba(148, 145, 145, 0);
+    border: 2px solid #84d384;
 
 }

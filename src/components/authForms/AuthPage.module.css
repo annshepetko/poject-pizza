@@ -1,14 +1,11 @@
-.auth_wrap{
-    background-image: url("https://cdn.wallpapersafari.com/48/84/NTqBbv.jpg");
-    background-size: 100%;
-
+.auth_wrap {
+    background-image: url("/src/components/authForms/wallpaperflare.com_wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
     width: 100%;
     padding-top: 10%;
     height: 100vh;
-}
-.auth_wrap img{
-    position: absolute;
-    top: 0;
-    width: 100%;
-
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
 }
