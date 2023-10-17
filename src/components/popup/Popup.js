@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './popup.style.css'
+import styles from  './popup.module.css'
 import {useContext} from "react";
 import { MyContext} from "../../App";
 import EatItem from "../secondPage/EatItems/EatItem";
@@ -21,12 +21,12 @@ const Popup = ({onClick, PopupText, none, margin, lineHeight,  eat}) => {
     let filterPizza = orderCard.filter(pizza => pizza.title.toLowerCase().includes(inputPizzaValue.toLowerCase()))
 
     return (
-        <div className='popup'>
-            <div  className='popup__body'>
+        <div className={styles.popup}>
+            <div  className={styles.popup__body}>
 
-                <div className='popup__content'>
+                <div className={styles.popup__content}>
 
-                    <div className='popup__title' style={{marginTop: margin, lineHeight: lineHeight}}>{PopupText}</div>
+                    <div className={styles.popup__title} style={{marginTop: margin, lineHeight: lineHeight}}>{PopupText}</div>
 
 
                     {eat === 'pizza' ?
@@ -54,12 +54,12 @@ const Popup = ({onClick, PopupText, none, margin, lineHeight,  eat}) => {
                             }
                         })}
                     </div>
-                    <div className='popup__btn-s'>
-                        <div className='popup__button_close' onClick={onClick}>Закрити</div>
+                    <div className={styles.popup__btn_s}>
+                        <div className={styles.popup__button_close} onClick={onClick}>Закрити</div>
                         {
                              orderData.filter(el => el.quantity > 0).length
                             ?
-                                 <NavLink style ={{display: none}} to={'/form'}> <button className='popup__form_button'> Заповнити форму</button></NavLink>
+                                 <NavLink style ={{display: none}} to={'/form'}> <button className={styles.popup__form_button}> Заповнити форму</button></NavLink>
                             : ''
                         }
                     </div>

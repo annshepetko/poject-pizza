@@ -1,0 +1,14 @@
+.auth_wrap{
+    background-image: url("https://cdn.wallpapersafari.com/48/84/NTqBbv.jpg");
+    background-size: 100%;
+
+    width: 100%;
+    padding-top: 10%;
+    height: 100vh;
+}
+.auth_wrap img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+}
