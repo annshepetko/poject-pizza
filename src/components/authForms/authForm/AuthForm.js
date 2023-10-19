@@ -25,6 +25,10 @@ const AuthForm = ({isRegisterForm, headerMessage}) => {
             authentication(userObj)
         }
     }
+
+    const authWithGoogle = async (event) =>{
+           event.preventDefault()
+    }
     return(
         <div className={styles.page_wraper} >
             <div className={styles.form_wraper}>
@@ -58,6 +62,8 @@ const AuthForm = ({isRegisterForm, headerMessage}) => {
                     <NavLink onClick={() => authUser(requestState)} className={styles.register_btn} to={""}>
                         Відправити
                     </NavLink>
+                    <p className={styles.choise_text}>Або</p>
+                    <button onClick={(e) => authWithGoogle(e)} className={styles.google_btn}></button>
                 </form>
             </div>
 

@@ -50,3 +50,21 @@ input::placeholder {
 .register_btn:hover {
     border: 2px solid rgba(148, 145, 145, 0);
 }
+.choise_text{
+    text-align: center;
+    margin-top: 2vh;
+    font-weight: 500;
+}
+.google_btn{
+    background-image: url("/src/components/authForms/authForm/google-icon-1024x1024-hv1t7wtt.png");
+    width: 30%;
+    height: 4vh;
+    width: 5vw;
+    border-radius: 2vw;
+    background-color: rgba(40, 40, 40, 0.5);
+    background-position: center;
+    margin-top: 2vh;
+    background-size: 20px;
+    border:1px solid #f6ab0e;;
+    background-repeat: no-repeat;
+}
