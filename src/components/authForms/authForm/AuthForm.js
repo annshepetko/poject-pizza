@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './AuthForm.module.css';
 import {NavLink} from "react-router-dom";
 import axios from "axios";
@@ -20,15 +20,24 @@ const AuthForm = ({isRegisterForm, headerMessage}) => {
     const authUser = async (userObj) =>{
         if (isRegisterForm){
             registration(userObj)
-
         }else {
             authentication(userObj)
         }
     }
-
     const authWithGoogle = async (event) =>{
            event.preventDefault()
+          await axios.get(baseUrl + '/api/v1/auth/takeUrl').then(response => {
+              window.location.href = response.data
+          })
+
     }
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        localStorage.setItem('token', urlParams.get('token'))
+        if (urlParams.get('token') !== "" && urlParams.get('token') !== null ){
+            window.location.href = "/"
+        }
+    });
     return(
         <div className={styles.page_wraper} >
             <div className={styles.form_wraper}>
@@ -62,8 +71,12 @@ const AuthForm = ({isRegisterForm, headerMessage}) => {
                     <NavLink onClick={() => authUser(requestState)} className={styles.register_btn} to={""}>
                         Відправити
                     </NavLink>
-                    <p className={styles.choise_text}>Або</p>
-                    <button onClick={(e) => authWithGoogle(e)} className={styles.google_btn}></button>
+                    { !isRegisterForm ?
+                        <div>
+                        <p className={styles.choise_text}>Або</p>
+                        <button onClick={(e) => authWithGoogle(e)} className={styles.google_btn}></button>
+                        </div>: ""}
+
                 </form>
             </div>
 
